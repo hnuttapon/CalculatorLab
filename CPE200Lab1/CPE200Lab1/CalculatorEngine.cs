@@ -8,7 +8,8 @@ namespace CPE200Lab1
 {
     public class CalculatorEngine
     {
-        protected bool isNumber(string str)
+       
+    protected bool isNumber(string str)
         {
             double retNum;
             return Double.TryParse(str, out retNum);
@@ -26,7 +27,7 @@ namespace CPE200Lab1
             return false;
         }
 
-        public string Process(string str)
+        public string calculate(string str)
         {
             //Split input string to multiple parts by space
             List<string> parts = str.Split(' ').ToList<string>();
@@ -50,7 +51,7 @@ namespace CPE200Lab1
             }
             return parts[0];
         }
-        public string unaryCalculate(string operate, string operand, int maxOutputSize = 8)
+        public string calculate(string operate, string operand, int maxOutputSize = 8)
         {
             switch (operate)
             {

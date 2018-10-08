@@ -8,8 +8,11 @@ namespace CPE200Lab1
 {
     public class RPNCalculatorEngine : CalculatorEngine
     {
-        public new string Process(string str)
+
+       // private CalculatorEngine en = new CalculatorEngine();
+        public new string calculate(string str)
         {
+            
             Stack<string> rpnStack = new Stack<string>();
 
             List<string> parts;
@@ -53,11 +56,10 @@ namespace CPE200Lab1
                             Console.WriteLine("4");
                             secondOperand = rpnStack.Pop();
                             firstOperand = rpnStack.Pop();
-                        }
-                                                 
+                        }                                               
                     }
                     catch(Exception e)
-                    {
+                    {  
                         return "E";
                     }
                     result = calculate(token, firstOperand, secondOperand, 4);
