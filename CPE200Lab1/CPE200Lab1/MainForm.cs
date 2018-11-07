@@ -16,14 +16,15 @@ namespace CPE200Lab1
         private bool isAllowBack;
         private bool isAfterOperater;
         private bool isAfterEqual;
+        
         private string firstOperand;
         private string operate;
         private double memory;
-        private SimpleCalculatorEngine engine;
+        private CalculatorEngine engine;
+        private Controller controller;
+        private Model model;
         
-
-        
-    private void resetAll()
+        private void resetAll()
         {
             lblDisplay.Text = "0";
             isAllowBack = true;
@@ -33,13 +34,14 @@ namespace CPE200Lab1
             firstOperand = null;
         }
 
-      
-
         public MainForm()
         {
             InitializeComponent();
             memory = 0;
-            engine = new SimpleCalculatorEngine();
+            engine = new CalculatorEngine();
+            model = new CalculatorModel();
+            controller = new Calculator_Controller();
+            controller.Add_Model(model);
             resetAll();
         }
 
@@ -69,30 +71,6 @@ namespace CPE200Lab1
             }
             lblDisplay.Text += digit;
             isAfterOperater = false;
-        }
-
-        private void btnUnaryOperator_Click(object sender, EventArgs e)
-        {
-            if (lblDisplay.Text is "Error")
-            {
-                return;
-            }
-            if (isAfterOperater)
-            {
-                return;
-            }
-            operate = ((Button)sender).Text;
-            engine.setfirstOperand(lblDisplay.Text);
-            string result = engine.calculate(operate, firstOperand);
-            if (result is "E" || result.Length > 8)
-            {
-                lblDisplay.Text = "Error";
-            }
-            else
-            {
-                lblDisplay.Text = result;
-            }
-
         }
 
         private void btnOperator_Click(object sender, EventArgs e)

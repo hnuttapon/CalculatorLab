@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPE200Lab1
 {
-    public class RPNCalculatorEngine : CalculatorEngine
+    public class RPNCalculatorEngine : SimpleCalculatorEngine
     {
 
        // private CalculatorEngine en = new CalculatorEngine();
@@ -34,7 +34,7 @@ namespace CPE200Lab1
 
             foreach (string token in parts)
             {
-                if (isNumber(token))
+                if (IsNumber(token))
                 {
                     Console.WriteLine(token);
                     rpnStack.Push(token);
@@ -94,9 +94,6 @@ namespace CPE200Lab1
             {
                 return "E";
             }
-
-            
-
         }
     }
 }

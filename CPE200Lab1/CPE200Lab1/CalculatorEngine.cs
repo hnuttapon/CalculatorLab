@@ -9,7 +9,7 @@ namespace CPE200Lab1
     public class CalculatorEngine
     {
        
-    protected bool isNumber(string str)
+        public bool IsNumber(string str)
         {
             double retNum;
             return Double.TryParse(str, out retNum);
@@ -36,7 +36,7 @@ namespace CPE200Lab1
             while(parts.Count > 1)
             {
                 //Check if the first three is ready for calcuation
-                if(!(isNumber(parts[0]) && isOperator(parts[1]) && isNumber(parts[2])))
+                if(!(IsNumber(parts[0]) && isOperator(parts[1]) && IsNumber(parts[2])))
                 {
                     return "E";
                 } else
