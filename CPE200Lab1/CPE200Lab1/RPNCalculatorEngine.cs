@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPE200Lab1
 {
-    public class RPNCalculatorEngine : SimpleCalculatorEngine
+    public class RPNCalculatorEngine : NewCalculatorEngine
     {
 
        // private CalculatorEngine en = new CalculatorEngine();
