@@ -5,30 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 namespace CPE200Lab1
 {
-    public class SimpleCalculatorEngine : CalculatorEngine
+    class SimpleCalculatorEngine : CalculatorEngine
     {
-        protected Double firstOperand;
-        protected Double secondOperand;
-        public string result;
-        public void setFirstOperand(string num)
+        protected double firstoperand;
+        protected double secondoperand;
+        public void setfirstOperand(string num)
         {
-            firstOperand = Double.Parse(num);
+            firstoperand = Double.Parse(num);
         }
-        public void setSecondOperand(string num)
+        protected void setsecondOperand(string num)
         {
-            secondOperand = Double.Parse(num);
+            secondoperand = Double.Parse(num);
         }
-        public string Process(string oper)
+        public String Calculate(string op)
         {
-            if (IsNumber(firstOperand.ToString()) && (oper is "√" || oper is "1/x"))
-            {
-                result = calculate(oper, firstOperand.ToString());
-            }
-            else if (IsNumber(firstOperand.ToString()) && IsNumber(secondOperand.ToString()))
-            {
-                result = calculate(oper, firstOperand.ToString(), secondOperand.ToString());
-            }
-            return result;
+            return calculate(op);
         }
     }
 }
